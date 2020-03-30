@@ -114,8 +114,8 @@
 
         check.addEventListener("click", comprobar);
         
-        document.getElementById("reiniciar").addEventListener("click",function() {location.reload()});
-        document.getElementById("seguir").addEventListener("click",function() {modal.style.visibility="hidden"});
+        document.getElementById("salir").addEventListener("click",function() {location.reload()});
+        document.getElementById("seguirJugando").addEventListener("click",function() {modal.style.visibility="hidden"});
     }
 
     document.addEventListener("DOMContentLoaded", inicio);
