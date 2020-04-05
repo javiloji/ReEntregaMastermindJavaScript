@@ -35,7 +35,7 @@ mastermind = (function () {
         let restantesIntento = [];
         // console.log(combinacionObjetivo);
 
-        for (let i = 0; i <= combinacionObjetivo.length - 1; i++) {
+        for (let i = 0; i < combinacionObjetivo.length; i++) {
 
             if (intento[i] === combinacionObjetivo[i]) {
                 combinacionNegrosYBlancas.unshift(1);
@@ -47,7 +47,7 @@ mastermind = (function () {
             }
         }
 
-        for (let i = 0; i <= restantesIntento.length - 1; i++) {
+        for (let i = 0; i < restantesIntento.length; i++) {
 
             if (restantesObjetivo.indexOf(restantesIntento[i]) != -1) {
                 combinacionNegrosYBlancas.unshift(0);
