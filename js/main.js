@@ -18,6 +18,8 @@
     let check = document.getElementById("comprobar");
     let modal = document.getElementById("modal");
 
+    let cajaPrincipal = document.getElementById("cajaPrincipal");
+
     let elegirColor = (colorFondo) => {
 
         for (let i = 0; i < coloresElegidos.length; i++) {
@@ -56,13 +58,13 @@
             for (let i = 0; i < arrayNegrosYBlancos.length; i++) {
                 
                 if(arrayNegrosYBlancos[i] == 1){
-                    document.getElementsByClassName("colorComprobado")[i].style.backgroundColor = "rgb(0,0,0)";
+                    arrayComprobados[i].style.backgroundColor = "rgb(0,0,0)";
                 }
                 else if(arrayNegrosYBlancos[i] == 0){
-                    document.getElementsByClassName("colorComprobado")[i].style.backgroundColor = "rgb(255,255,255)";
+                    arrayComprobados[i].style.backgroundColor = "rgb(255,255,255)";
                 }
                 else{
-                    document.getElementsByClassName("colorComprobado")[i].style.backgroundColor = "rgb(192, 192, 192)";
+                    arrayComprobados[i].style.backgroundColor = "rgb(192, 192, 192)";
                 }
                 
             }
@@ -85,6 +87,8 @@
 
     let inicio = () => {
 
+        let elementosColores = document.getElementsByClassName("colores");
+
         console.log("Dejo el mastermind.init en consola para que puedas hacer mejor las pruebas: ");
         mastermind.init();
 
@@ -98,14 +102,14 @@
 
         for (let i = 0; i < colores.length; i++) {
             
-            document.getElementsByClassName("colores")[i].addEventListener("click", function () {
+            elementosColores[i].addEventListener("click", function () {
                 elegirColor(colores[i]);
             })
         }
 
         for (let i = 0; i < 4; i++) {
             
-            document.getElementById("cajaPrincipal").getElementsByTagName("div")[0].getElementsByClassName("colorElegido")[i].addEventListener("click", function () {
+            cajaPrincipal.getElementsByTagName("div")[0].getElementsByClassName("colorElegido")[i].addEventListener("click", function () {
                 // borrarColor(coloresElegidos[i]);
                 borrarColor(document.getElementsByClassName("coloresElegidos")[0].childNodes[i*2+1]); // El metodo childNodes devuelve el div en este orden: 1,3,5,7
             })
