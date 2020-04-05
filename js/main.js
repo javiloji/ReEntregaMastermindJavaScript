@@ -91,7 +91,6 @@
         copia = document.getElementById("cajaPrincipal").cloneNode(true);
 
         console.log(mastermind.mostrar());
-        elegirColor();
 
         /**
          * Este for es el encargado de elegir los colores pulsados y añadirles el escuchador
