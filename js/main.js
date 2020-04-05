@@ -10,6 +10,8 @@
 
     let copia;
 
+    let arrayNegrosYBlancos;
+
     let coloresElegidos = document.getElementsByClassName("colorElegido");
 
     let colores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(128, 128, 128)", 
@@ -28,7 +30,6 @@
                 coloresElegidos[i].style.backgroundColor = colorFondo;
                 break;
             }
-
         }
     }
 
@@ -36,9 +37,15 @@
         color.style.backgroundColor="rgb(192, 192, 192)";
     }
 
-    let arrayNegrosYBlancos;
-    
-    
+    let borrarBola = () =>{
+        for (let i = 0; i < 4; i++) {
+            
+            document.getElementById("cajaPrincipal").getElementsByTagName("div")[0].getElementsByClassName("colorElegido")[i].addEventListener("click", function () {
+                // borrarColor(coloresElegidos[i]);
+                borrarColor(document.getElementsByClassName("coloresElegidos")[0].childNodes[i*2+1]); // El metodo childNodes devuelve el div en este orden: 1,3,5,7
+            })
+        }
+    }
 
     let comprobar = () => {
 
@@ -84,13 +91,7 @@
             document.getElementById("juego").insertBefore(copia, document.getElementById("cajaPrincipal"));
             copia = document.getElementById("cajaPrincipal").cloneNode(true);
             
-            for (let i = 0; i < 4; i++) {
-            
-                document.getElementById("cajaPrincipal").getElementsByTagName("div")[0].getElementsByClassName("colorElegido")[i].addEventListener("click", function () {
-                    // borrarColor(coloresElegidos[i]);
-                    borrarColor(document.getElementsByClassName("coloresElegidos")[0].childNodes[i*2+1]); // El metodo childNodes devuelve el div en este orden: 1,3,5,7
-                })
-            }
+            borrarBola();
         }
     }
 
@@ -103,24 +104,14 @@
 
         copia = document.getElementById("cajaPrincipal").cloneNode(true);
 
-        console.log(mastermind.mostrar());
+        console.log(mastermind.mostrar());  
 
-        /**
-         * Este for es el encargado de elegir los colores pulsados y añadirles el escuchador
-        */
+        borrarBola();
 
         for (let i = 0; i < colores.length; i++) {
             
             elementosColores[i].addEventListener("click", function () {
                 elegirColor(colores[i]);
-            })
-        }
-
-        for (let i = 0; i < 4; i++) {
-            
-            cajaPrincipal.getElementsByTagName("div")[0].getElementsByClassName("colorElegido")[i].addEventListener("click", function () {
-                // borrarColor(coloresElegidos[i]);
-                borrarColor(document.getElementsByClassName("coloresElegidos")[0].childNodes[i*2+1]); // El metodo childNodes devuelve el div en este orden: 1,3,5,7
             })
         }
 
