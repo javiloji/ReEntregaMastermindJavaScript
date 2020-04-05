@@ -28,7 +28,7 @@ mastermind = (function () {
         return combinacionObjetivoColores;
     }
 
-    let compararCoincidencia = function (intento) {
+    let comprobarCoincidencia = function (intento) {
 
         let combinacionNegrosYBlancas = [];
         let restantesObjetivo = [];
@@ -65,7 +65,7 @@ mastermind = (function () {
     return {
         init: init,
         mostrar: mostrar,
-        compararCoincidencia: compararCoincidencia
+        comprobarCoincidencia: comprobarCoincidencia
     }
 
 })();

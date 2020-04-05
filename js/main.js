@@ -45,7 +45,7 @@
             
             let arrayComprobados = document.getElementsByClassName("colorComprobado");
             
-            arrayNegrosYBlancos = mastermind.compararCoincidencia([
+            arrayNegrosYBlancos = mastermind.comprobarCoincidencia([
                 colores.indexOf(window.getComputedStyle(coloresElegidos[0]).backgroundColor),
                 colores.indexOf(window.getComputedStyle(coloresElegidos[1]).backgroundColor),
                 colores.indexOf(window.getComputedStyle(coloresElegidos[2]).backgroundColor),
