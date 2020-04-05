@@ -13,8 +13,10 @@ mastermind = (function () {
 
     let combinacionObjetivo = [];
 
+    let generarAleatorio;
+
     let init = function () {
-        let generarAleatorio = function () {
+        generarAleatorio = function () {
             return parseInt(Math.random() * colores.length);
         }
         combinacionObjetivo = [generarAleatorio(), generarAleatorio(), generarAleatorio(), generarAleatorio()];
