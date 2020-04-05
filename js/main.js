@@ -38,20 +38,29 @@
 
     let arrayNegrosYBlancos;
     
+    
+
     let comprobar = () => {
-        if(window.getComputedStyle(coloresElegidos[0]).backgroundColor != "rgb(192, 192, 192)"
-        && window.getComputedStyle(coloresElegidos[1]).backgroundColor != "rgb(192, 192, 192)"
-        && window.getComputedStyle(coloresElegidos[2]).backgroundColor != "rgb(192, 192, 192)"
-        && window.getComputedStyle(coloresElegidos[3]).backgroundColor != "rgb(192, 192, 192)"
+
+        let arrayColorFondo = [window.getComputedStyle(coloresElegidos[0]).backgroundColor,
+            window.getComputedStyle(coloresElegidos[1]).backgroundColor,
+            window.getComputedStyle(coloresElegidos[2]).backgroundColor,
+            window.getComputedStyle(coloresElegidos[3]).backgroundColor];
+
+
+        if(arrayColorFondo[0] != "rgb(192, 192, 192)"
+        && arrayColorFondo[1] != "rgb(192, 192, 192)"
+        && arrayColorFondo[2] != "rgb(192, 192, 192)"
+        && arrayColorFondo[3] != "rgb(192, 192, 192)"
         ){
             
             let arrayComprobados = document.getElementsByClassName("colorComprobado");
             
             arrayNegrosYBlancos = mastermind.comprobarCoincidencia([
-                colores.indexOf(window.getComputedStyle(coloresElegidos[0]).backgroundColor),
-                colores.indexOf(window.getComputedStyle(coloresElegidos[1]).backgroundColor),
-                colores.indexOf(window.getComputedStyle(coloresElegidos[2]).backgroundColor),
-                colores.indexOf(window.getComputedStyle(coloresElegidos[3]).backgroundColor)
+                colores.indexOf(arrayColorFondo[0]),
+                colores.indexOf(arrayColorFondo[1]),
+                colores.indexOf(arrayColorFondo[2]),
+                colores.indexOf(arrayColorFondo[3])
                 ]
             );
 
